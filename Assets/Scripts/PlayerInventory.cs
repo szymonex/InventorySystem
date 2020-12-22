@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -7,16 +6,11 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<Item> Items { get; set; } = new List<Item>();
     [SerializeField] private int maxInventoryWeight = 7;
-    //do zmiany
-    [SerializeField]private int currentInventoryWeight = 0;
-    //public bool isMaxWeight = false;
+    private int currentInventoryWeight = 0;
     public TMP_Text yellowBoxCounterDisplay;
     public GameObject MaxWeightInfoPanel;
     bool isMaxWeightInfoPanel = false;
     public TMP_Text maxWeightInfoText;
-
-
-
 
     public bool isMaxWeightAchieved(Item newItem)
     {
@@ -63,7 +57,5 @@ public class PlayerInventory : MonoBehaviour
             MaxWeightInfoPanel.SetActive(false);
             isMaxWeightInfoPanel = false;
         }
-
     }
-
 }

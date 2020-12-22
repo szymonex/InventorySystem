@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class ItemController : MonoBehaviour
@@ -38,10 +36,7 @@ public class ItemController : MonoBehaviour
             if (!playerInventory.isMaxWeightAchieved(item))
             {
                 pickUpItemController.enabled = true;
-                //playerInventory.AddNewItem(item);
                 pickUpItemController.ItemToPickUp(item);
-                //gameObject.SetActive(false);
-                //pickUpItemController.enabled = false;
             }
             else if (playerInventory.isMaxWeightAchieved(item))
             {
