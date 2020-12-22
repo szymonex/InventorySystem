@@ -33,15 +33,14 @@ public class ItemController : MonoBehaviour
                 Debug.Log("Player nie ma komponentu PickUpItemController");
             }
 
-            if (!playerInventory.isMaxWeightAchieved(item))
+            if (!playerInventory.IsMaxWeightAchieved(item))
             {
                 pickUpItemController.enabled = true;
                 pickUpItemController.ItemToPickUp(item);
             }
-            else if (playerInventory.isMaxWeightAchieved(item))
+            else if (playerInventory.IsMaxWeightAchieved(item))
             {
                 playerInventory.MaxWeightInfoPanelHandler();
-                Debug.Log($"Current inventory weight = {playerInventory.GetCurrentInventoryWeight()}, new item is too heavy to pick up!");
             }
         }
     }

@@ -12,7 +12,7 @@ public class PlayerInventory : MonoBehaviour
     bool isMaxWeightInfoPanel = false;
     public TMP_Text maxWeightInfoText;
 
-    public bool isMaxWeightAchieved(Item newItem)
+    public bool IsMaxWeightAchieved(Item newItem)
     {
         if(maxInventoryWeight < currentInventoryWeight + newItem.itemWeight)
         {
@@ -31,23 +31,18 @@ public class PlayerInventory : MonoBehaviour
         YellowBoxCounterActualizer();
     }
 
-    public void YellowBoxCounterActualizer()
+    private void YellowBoxCounterActualizer()
     {
         List<Item> yellowBoxes = new List<Item>();
         yellowBoxes = Items.FindAll(y => y.itemName == "YellowBox");
         yellowBoxCounterDisplay.text = yellowBoxes.Count.ToString();
     }
 
-    public int GetCurrentInventoryWeight()
-    {
-        return currentInventoryWeight;
-    }
-
     public void MaxWeightInfoPanelHandler()
     {
         MaxWeightInfoPanel.SetActive(true);
         isMaxWeightInfoPanel = true;
-        maxWeightInfoText.text = $"Current inventory weight = {GetCurrentInventoryWeight()}, new item is too heavy to pick up!";
+        maxWeightInfoText.text = $"Current inventory weight = {currentInventoryWeight}, new item is too heavy to pick up!";
     }
     public void MaxWeightInfoPanelOff()
     {

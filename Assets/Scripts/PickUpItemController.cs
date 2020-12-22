@@ -4,7 +4,7 @@ public class PickUpItemController : MonoBehaviour
 {
     public GameObject pickUpPanel;
     PlayerInventory playerInventory;
-    public Item itemToPickUp;
+    private Item itemToPickUp;
 
     private void Start()
     {
